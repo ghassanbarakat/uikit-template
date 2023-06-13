@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard - UIkit 3 KickOff</title>
+		<!-- CSS FILES -->
+		<link rel="stylesheet" type="text/css" href="app_files/uikit.min.css">
+		<link rel="stylesheet" type="text/css" href="app_files/dashboard.css">
+	<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+	<body>
+
+		<!--HEADER-->
+		<header id="top-head" class="uk-position-fixed">
+			<div class="uk-container uk-container-expand uk-background-primary">
+				<nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
+					<div class="uk-navbar-left">
+						<div class="uk-navbar-item uk-hidden@m">
+							<a class="uk-logo" href="#"><img class="custom-logo" src="app_files/dashboard-logo-white.svg" alt=""></a>
+						</div>
+						<ul class="uk-navbar-nav uk-visible@m">
+							<li><a href="#">Accounts</a></li>
+							<li>
+								<a href="#" role="button" aria-haspopup="true">Settings <span data-uk-icon="icon: triangle-down" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 7 15 7 10 12"></polygon></svg></span></a>
+								<div class="uk-navbar-dropdown uk-drop">
+									<ul class="uk-nav uk-navbar-dropdown-nav">
+										<li class="uk-nav-header">YOUR ACCOUNT</li>
+										<li><a href="#"><span data-uk-icon="icon: info" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.13,11.59 C11.97,12.84 10.35,14.12 9.1,14.16 C6.17,14.2 9.89,9.46 8.74,8.37 C9.3,8.16 10.62,7.83 10.62,8.81 C10.62,9.63 10.12,10.55 9.88,11.32 C8.66,15.16 12.13,11.15 12.14,11.18 C12.16,11.21 12.16,11.35 12.13,11.59 C12.08,11.95 12.16,11.35 12.13,11.59 L12.13,11.59 Z M11.56,5.67 C11.56,6.67 9.36,7.15 9.36,6.03 C9.36,5 11.56,4.54 11.56,5.67 L11.56,5.67 Z"></path><circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle></svg></span> Summary</a></li>
+										<li><a href="#"><span data-uk-icon="icon: refresh" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.1" d="M17.08,11.15 C17.09,11.31 17.1,11.47 17.1,11.64 C17.1,15.53 13.94,18.69 10.05,18.69 C6.16,18.68 3,15.53 3,11.63 C3,7.74 6.16,4.58 10.05,4.58 C10.9,4.58 11.71,4.73 12.46,5"></path><polyline fill="none" stroke="#000" points="9.9 2 12.79 4.89 9.79 7.9"></polyline></svg></span> Edit</a></li>
+										<li><a href="#"><span data-uk-icon="icon: settings" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><ellipse fill="none" stroke="#000" cx="6.11" cy="3.55" rx="2.11" ry="2.15"></ellipse><ellipse fill="none" stroke="#000" cx="6.11" cy="15.55" rx="2.11" ry="2.15"></ellipse><circle fill="none" stroke="#000" cx="13.15" cy="9.55" r="2.15"></circle><rect x="1" y="3" width="3" height="1"></rect><rect x="10" y="3" width="8" height="1"></rect><rect x="1" y="9" width="8" height="1"></rect><rect x="15" y="9" width="3" height="1"></rect><rect x="1" y="15" width="3" height="1"></rect><rect x="10" y="15" width="8" height="1"></rect></svg></span> Configuration</a></li>
+										<li class="uk-nav-divider"></li>
+										<li><a href="#"><span data-uk-icon="icon: image" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="16.1" cy="6.1" r="1.1"></circle><rect fill="none" stroke="#000" x=".5" y="2.5" width="19" height="15"></rect><polyline fill="none" stroke="#000" stroke-width="1.01" points="4,13 8,9 13,14"></polyline><polyline fill="none" stroke="#000" stroke-width="1.01" points="11,12 12.5,10.5 16,14"></polyline></svg></span> Your Data</a></li>
+										<li class="uk-nav-divider"></li>
+										<li><a href="#"><span data-uk-icon="icon: sign-out" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="13.1 13.4 12.5 12.8 15.28 10 8 10 8 9 15.28 9 12.5 6.2 13.1 5.62 17 9.5"></polygon><polygon points="13 2 3 2 3 17 13 17 13 16 4 16 4 3 13 3"></polygon></svg></span> Logout</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<div class="uk-navbar-item uk-visible@s">
+							<form action="dashboard.html" class="uk-search uk-search-default">
+								<span data-uk-search-icon="" class="uk-icon uk-search-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="9" cy="9" r="7"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M14,14 L18,18 L14,14 Z"></path></svg></span>
+								<input class="uk-search-input search-field" type="search" placeholder="Search">
+							</form>
+						</div>
+					</div>
+					<div class="uk-navbar-right">
+						<ul class="uk-navbar-nav">
+							<li><a href="#" data-uk-icon="icon:user" title="" data-uk-tooltip="" class="uk-icon" aria-describedby="uk-tooltip-9"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="9.9" cy="6.4" r="4.4"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M1.5,19 C2.3,14.5 5.8,11.2 10,11.2 C14.2,11.2 17.7,14.6 18.5,19.2"></path></svg></a></li>
+							<li><a href="#" data-uk-icon="icon: settings" title="" data-uk-tooltip="" class="uk-icon" aria-describedby="uk-tooltip-11"><svg width="20" height="20" viewBox="0 0 20 20"><ellipse fill="none" stroke="#000" cx="6.11" cy="3.55" rx="2.11" ry="2.15"></ellipse><ellipse fill="none" stroke="#000" cx="6.11" cy="15.55" rx="2.11" ry="2.15"></ellipse><circle fill="none" stroke="#000" cx="13.15" cy="9.55" r="2.15"></circle><rect x="1" y="3" width="3" height="1"></rect><rect x="10" y="3" width="8" height="1"></rect><rect x="1" y="9" width="8" height="1"></rect><rect x="15" y="9" width="3" height="1"></rect><rect x="1" y="15" width="3" height="1"></rect><rect x="10" y="15" width="8" height="1"></rect></svg></a></li>
+							<li><a href="#" data-uk-icon="icon:  sign-out" title="" data-uk-tooltip="" class="uk-icon" aria-describedby="uk-tooltip-13"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="13.1 13.4 12.5 12.8 15.28 10 8 10 8 9 15.28 9 12.5 6.2 13.1 5.62 17 9.5"></polygon><polygon points="13 2 3 2 3 17 13 17 13 16 4 16 4 3 13 3"></polygon></svg></a></li>
+							<li><a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" data-uk-toggle="" data-uk-navbar-toggle-icon="" href="#offcanvas-nav" title="" data-uk-tooltip="" role="button" aria-label="Open menu" aria-describedby="uk-tooltip-16"><svg width="20" height="20" viewBox="0 0 20 20"><style>.uk-navbar-toggle-animate
+ svg&gt;[class*="line-"]{transition:0.2s 
+ease-in-out;transition-property:transform, 
+opacity;transform-origin:center;opacity:1}.uk-navbar-toggle 
+svg&gt;.line-3{opacity:0}.uk-navbar-toggle-animate[aria-expanded="true"]
+ 
+svg&gt;.line-3{opacity:1}.uk-navbar-toggle-animate[aria-expanded="true"]
+ 
+svg&gt;.line-2{transform:rotate(45deg)}.uk-navbar-toggle-animate[aria-expanded="true"]
+ 
+svg&gt;.line-3{transform:rotate(-45deg)}.uk-navbar-toggle-animate[aria-expanded="true"]
+ svg&gt;.line-1,.uk-navbar-toggle-animate[aria-expanded="true"] 
+svg&gt;.line-4{opacity:0}.uk-navbar-toggle-animate[aria-expanded="true"]
+ svg&gt;.line-1{transform:translateY(6px) 
+scaleX(0)}.uk-navbar-toggle-animate[aria-expanded="true"] 
+svg&gt;.line-4{transform:translateY(-6px) scaleX(0)}</style><rect class="line-1" y="3" width="20" height="2"></rect><rect class="line-2" y="9" width="20" height="2"></rect><rect class="line-3" y="9" width="20" height="2"></rect><rect class="line-4" y="15" width="20" height="2"></rect></svg></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--/HEADER-->
+		<!-- LEFT BAR -->
+		<aside id="left-col" class="uk-light uk-visible@m">
+			<div class="left-logo uk-flex uk-flex-middle">
+				<img class="custom-logo" src="app_files/dashboard-logo.svg" alt="">
+			</div>
+			<div class="left-content-box  content-box-dark">
+				<img src="app_files/avatar.svg" alt="" class="uk-border-circle profile-img">
+				<h4 class="uk-text-center uk-margin-remove-vertical text-light">John Doe</h4>
+				
+				<div class="uk-position-relative uk-text-center uk-display-block">
+				    <a href="#" class="uk-text-small uk-text-muted uk-display-block uk-text-center uk-icon" data-uk-icon="icon: triangle-down; ratio: 0.7" role="button" aria-haspopup="true">Admin<svg width="14" height="14" viewBox="0 0 20 20"><polygon points="5 7 15 7 10 12"></polygon></svg></a>
+				    <!-- user dropdown -->
+				    <div class="uk-dropdown user-drop uk-drop" data-uk-dropdown="mode: click; pos: bottom-center; animation: uk-animation-slide-bottom-small; duration: 150">
+				    	<ul class="uk-nav uk-dropdown-nav uk-text-left">
+								<li><a href="#"><span data-uk-icon="icon: info" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.13,11.59 C11.97,12.84 10.35,14.12 9.1,14.16 C6.17,14.2 9.89,9.46 8.74,8.37 C9.3,8.16 10.62,7.83 10.62,8.81 C10.62,9.63 10.12,10.55 9.88,11.32 C8.66,15.16 12.13,11.15 12.14,11.18 C12.16,11.21 12.16,11.35 12.13,11.59 C12.08,11.95 12.16,11.35 12.13,11.59 L12.13,11.59 Z M11.56,5.67 C11.56,6.67 9.36,7.15 9.36,6.03 C9.36,5 11.56,4.54 11.56,5.67 L11.56,5.67 Z"></path><circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle></svg></span> Summary</a></li>
+								<li><a href="#"><span data-uk-icon="icon: refresh" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.1" d="M17.08,11.15 C17.09,11.31 17.1,11.47 17.1,11.64 C17.1,15.53 13.94,18.69 10.05,18.69 C6.16,18.68 3,15.53 3,11.63 C3,7.74 6.16,4.58 10.05,4.58 C10.9,4.58 11.71,4.73 12.46,5"></path><polyline fill="none" stroke="#000" points="9.9 2 12.79 4.89 9.79 7.9"></polyline></svg></span> Edit</a></li>
+								<li><a href="#"><span data-uk-icon="icon: settings" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><ellipse fill="none" stroke="#000" cx="6.11" cy="3.55" rx="2.11" ry="2.15"></ellipse><ellipse fill="none" stroke="#000" cx="6.11" cy="15.55" rx="2.11" ry="2.15"></ellipse><circle fill="none" stroke="#000" cx="13.15" cy="9.55" r="2.15"></circle><rect x="1" y="3" width="3" height="1"></rect><rect x="10" y="3" width="8" height="1"></rect><rect x="1" y="9" width="8" height="1"></rect><rect x="15" y="9" width="3" height="1"></rect><rect x="1" y="15" width="3" height="1"></rect><rect x="10" y="15" width="8" height="1"></rect></svg></span> Configuration</a></li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#"><span data-uk-icon="icon: image" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="16.1" cy="6.1" r="1.1"></circle><rect fill="none" stroke="#000" x=".5" y="2.5" width="19" height="15"></rect><polyline fill="none" stroke="#000" stroke-width="1.01" points="4,13 8,9 13,14"></polyline><polyline fill="none" stroke="#000" stroke-width="1.01" points="11,12 12.5,10.5 16,14"></polyline></svg></span> Your Data</a></li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#"><span data-uk-icon="icon: sign-out" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="13.1 13.4 12.5 12.8 15.28 10 8 10 8 9 15.28 9 12.5 6.2 13.1 5.62 17 9.5"></polygon><polygon points="13 2 3 2 3 17 13 17 13 16 4 16 4 3 13 3"></polygon></svg></span> Sign Out</a></li>
+					    </ul>
+				    </div>
+				    <!-- /user dropdown -->
+				</div>
+			</div>
+			
+			<div class="left-nav-wrap">
+				<ul class="uk-nav uk-nav-default uk-nav-parent-icon" data-uk-nav="">
+					<li class="uk-nav-header">ACTIONS</li>
+					<li><a href="#"><span data-uk-icon="icon: comments" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polyline fill="none" stroke="#000" points="2 0.5 19.5 0.5 19.5 13"></polyline><path d="M5,19.71 L5,15 L0,15 L0,2 L18,2 L18,15 L9.71,15 L5,19.71 L5,19.71 L5,19.71 Z M1,14 L6,14 L6,17.29 L9.29,14 L17,14 L17,3 L1,3 L1,14 L1,14 L1,14 Z"></path></svg></span>Messages</a></li>
+					<li><a href="#"><span data-uk-icon="icon: users" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="7.7" cy="8.6" r="3.5"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M1,18.1 C1.7,14.6 4.4,12.1 7.6,12.1 C10.9,12.1 13.7,14.8 14.3,18.3"></path><path fill="none" stroke="#000" stroke-width="1.1" d="M11.4,4 C12.8,2.4 15.4,2.8 16.3,4.7 C17.2,6.6 15.7,8.9 13.6,8.9 C16.5,8.9 18.8,11.3 19.2,14.1"></path></svg></span>Friends</a></li>
+					<li class="uk-parent"><a href="#" id="uk-nav-25-title-0" role="button" aria-controls="uk-nav-25-content-0" aria-expanded="false" aria-disabled="false"><span data-uk-icon="icon: thumbnails" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="#000" x="3.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="11.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="3.5" y="11.5" width="5" height="5"></rect></svg></span>Templates</a>
+						<ul class="uk-nav-sub" id="uk-nav-25-content-0" role="region" aria-labelledby="uk-nav-25-title-0" hidden="">
+							<li role="presentation"><a title="Article" href="https://zzseba78.github.io/Kick-Off/article.html">Article</a></li>
+							<li role="presentation"><a title="Album" href="https://zzseba78.github.io/Kick-Off/album.html">Album</a></li>
+							<li role="presentation"><a title="Cover" href="https://zzseba78.github.io/Kick-Off/cover.html">Cover</a></li>
+							<li role="presentation"><a title="Cards" href="https://zzseba78.github.io/Kick-Off/cards.html">Cards</a></li>
+							<li role="presentation"><a title="News Blog" href="https://zzseba78.github.io/Kick-Off/newsBlog.html">News Blog</a></li>
+							<li role="presentation"><a title="Price" href="https://zzseba78.github.io/Kick-Off/price.html">Price</a></li>
+							<li role="presentation"><a title="Login" href="https://zzseba78.github.io/Kick-Off/login.html">Login</a></li>
+							<li role="presentation"><a title="Login-Dark" href="https://zzseba78.github.io/Kick-Off/login-dark.html">Login - Dark</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span data-uk-icon="icon: album" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><rect x="5" y="2" width="10" height="1"></rect><rect x="3" y="4" width="14" height="1"></rect><rect fill="none" stroke="#000" x="1.5" y="6.5" width="17" height="11"></rect></svg></span>Albums</a></li>
+					<li><a href="#"><span data-uk-icon="icon: thumbnails" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="#000" x="3.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="11.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="3.5" y="11.5" width="5" height="5"></rect></svg></span>Featured Content</a></li>
+					<li><a href="#"><span data-uk-icon="icon: lifesaver" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="10" cy="10" r="9"></circle><circle fill="none" stroke="#000" cx="10" cy="10" r="5"></circle><line fill="none" stroke="#000" stroke-width="1.1" x1="5.17" y1="2.39" x2="8.11" y2="5.33"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="5.33" y1="8.11" x2="2.39" y2="5.17"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="14.83" y1="17.61" x2="11.89" y2="14.67"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="14.67" y1="11.89" x2="17.61" y2="14.83"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="17.61" y1="5.17" x2="14.67" y2="8.11"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="11.89" y1="5.33" x2="14.83" y2="2.39"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="8.11" y1="14.67" x2="5.17" y2="17.61"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="2.39" y1="14.83" x2="5.33" y2="11.89"></line></svg></span>Tips</a></li>
+					<li class="uk-parent">
+						<a href="#" id="uk-nav-25-title-1" role="button" aria-controls="uk-nav-25-content-1" aria-expanded="false" aria-disabled="false"><span data-uk-icon="icon: comments" class="uk-margin-small-right uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polyline fill="none" stroke="#000" points="2 0.5 19.5 0.5 19.5 13"></polyline><path d="M5,19.71 L5,15 L0,15 L0,2 L18,2 L18,15 L9.71,15 L5,19.71 L5,19.71 L5,19.71 Z M1,14 L6,14 L6,17.29 L9.29,14 L17,14 L17,3 L1,3 L1,14 L1,14 L1,14 Z"></path></svg></span>Reports</a>
+						<ul class="uk-nav-sub" id="uk-nav-25-content-1" role="region" aria-labelledby="uk-nav-25-title-1" hidden="">
+							<li role="presentation"><a href="#">Sub item</a></li>
+							<li role="presentation"><a href="#">Sub item</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="left-content-box uk-margin-top">
+					
+						<h5>Daily Reports</h5>
+						<div>
+							<span class="uk-text-small">Traffic <small>(+50)</small></span>
+							<progress class="uk-progress" value="50" max="100"></progress>
+						</div>
+						<div>
+							<span class="uk-text-small">Income <small>(+78)</small></span>
+							<progress class="uk-progress success" value="78" max="100"></progress>
+						</div>
+						<div>
+							<span class="uk-text-small">Feedback <small>(-12)</small></span>
+							<progress class="uk-progress warning" value="12" max="100"></progress>
+						</div>
+					
+				</div>
+				
+			</div>
+			<div class="bar-bottom">
+				<ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5 uk-grid" data-uk-grid="">
+					<li class="uk-first-column">
+						<a href="#" class="uk-icon-link uk-icon" data-uk-icon="icon: home" title="" data-uk-tooltip="" aria-describedby="uk-tooltip-35"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="18.65 11.35 10 2.71 1.35 11.35 0.65 10.65 10 1.29 19.35 10.65"></polygon><polygon points="15 4 18 4 18 7 17 7 17 5 15 5"></polygon><polygon points="3 11 4 11 4 18 7 18 7 12 12 12 12 18 16 18 16 11 17 11 17 19 11 19 11 13 8 13 8 19 3 19"></polygon></svg></a>
+					</li>
+					<li>
+						<a href="#" class="uk-icon-link uk-icon" data-uk-icon="icon: settings" title="" data-uk-tooltip="" aria-describedby="uk-tooltip-37"><svg width="20" height="20" viewBox="0 0 20 20"><ellipse fill="none" stroke="#000" cx="6.11" cy="3.55" rx="2.11" ry="2.15"></ellipse><ellipse fill="none" stroke="#000" cx="6.11" cy="15.55" rx="2.11" ry="2.15"></ellipse><circle fill="none" stroke="#000" cx="13.15" cy="9.55" r="2.15"></circle><rect x="1" y="3" width="3" height="1"></rect><rect x="10" y="3" width="8" height="1"></rect><rect x="1" y="9" width="8" height="1"></rect><rect x="15" y="9" width="3" height="1"></rect><rect x="1" y="15" width="3" height="1"></rect><rect x="10" y="15" width="8" height="1"></rect></svg></a>
+					</li>
+					<li>
+						<a href="#" class="uk-icon-link uk-icon" data-uk-icon="icon: social" title="" data-uk-tooltip="" aria-describedby="uk-tooltip-39"><svg width="20" height="20" viewBox="0 0 20 20"><line fill="none" stroke="#000" stroke-width="1.1" x1="13.4" y1="14" x2="6.3" y2="10.7"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13.5" y1="5.5" x2="6.5" y2="8.8"></line><circle fill="none" stroke="#000" stroke-width="1.1" cx="15.5" cy="4.6" r="2.3"></circle><circle fill="none" stroke="#000" stroke-width="1.1" cx="15.5" cy="14.8" r="2.3"></circle><circle fill="none" stroke="#000" stroke-width="1.1" cx="4.5" cy="9.8" r="2.3"></circle></svg></a>
+					</li>
+					
+					<li>
+						<a href="#" class="uk-icon-link uk-icon" data-uk-tooltip="Sign out" data-uk-icon="icon: sign-out" title="" aria-describedby="uk-tooltip-40"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="13.1 13.4 12.5 12.8 15.28 10 8 10 8 9 15.28 9 12.5 6.2 13.1 5.62 17 9.5"></polygon><polygon points="13 2 3 2 3 17 13 17 13 16 4 16 4 3 13 3"></polygon></svg></a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- /LEFT BAR -->
+		<!-- CONTENT -->
+		<div id="content" data-uk-height-viewport="expand: true" style="min-height: 693px;">
+			<div class="uk-container uk-container-expand">
+				<div class="uk-grid uk-grid-divider uk-grid-medium uk-child-width-1-2 uk-child-width-1-4@l uk-child-width-1-5@xl" data-uk-grid="">
+					<div class="uk-first-column">
+						<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="7.7" cy="8.6" r="3.5"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M1,18.1 C1.7,14.6 4.4,12.1 7.6,12.1 C10.9,12.1 13.7,14.8 14.3,18.3"></path><path fill="none" stroke="#000" stroke-width="1.1" d="M11.4,4 C12.8,2.4 15.4,2.8 16.3,4.7 C17.2,6.6 15.7,8.9 13.6,8.9 C16.5,8.9 18.8,11.3 19.2,14.1"></path></svg></span>New Users</span>
+						<h1 class="uk-heading-primary uk-margin-remove  uk-text-primary">2.134</h1>
+						<div class="uk-text-small">
+							<span class="uk-text-success uk-icon" data-uk-icon="icon: triangle-up">15%<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 13 10 8 15 13"></polygon></svg></span> more than last week.
+						</div>
+					</div>
+					<div>
+						
+						<span class="uk-text-small"><span data-uk-icon="icon:social" class="uk-margin-small-right uk-text-primary uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><line fill="none" stroke="#000" stroke-width="1.1" x1="13.4" y1="14" x2="6.3" y2="10.7"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13.5" y1="5.5" x2="6.5" y2="8.8"></line><circle fill="none" stroke="#000" stroke-width="1.1" cx="15.5" cy="4.6" r="2.3"></circle><circle fill="none" stroke="#000" stroke-width="1.1" cx="15.5" cy="14.8" r="2.3"></circle><circle fill="none" stroke="#000" stroke-width="1.1" cx="4.5" cy="9.8" r="2.3"></circle></svg></span>Social Media</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">8.490</h1>
+						<div class="uk-text-small">
+							<span class="uk-text-warning uk-icon" data-uk-icon="icon: triangle-down">-15%<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 7 15 7 10 12"></polygon></svg></span> less than last week.
+						</div>
+						
+					</div>
+					<div>
+						
+						<span class="uk-text-small"><span data-uk-icon="icon:clock" class="uk-margin-small-right uk-text-primary uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle><rect x="9" y="4" width="1" height="7"></rect><path fill="none" stroke="#000" stroke-width="1.1" d="M13.018,14.197 L9.445,10.625"></path></svg></span>Traffic hours</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">12.00<small class="uk-text-small">PM</small></h1>
+						<div class="uk-text-small">
+							<span class="uk-text-success uk-icon" data-uk-icon="icon: triangle-up"> 19%<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 13 10 8 15 13"></polygon></svg></span> more than last week.
+						</div>
+						
+					</div>
+					<div>
+						
+						<span class="uk-text-small"><span data-uk-icon="icon:search" class="uk-margin-small-right uk-text-primary uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="9" cy="9" r="7"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M14,14 L18,18 L14,14 Z"></path></svg></span>Week Search</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">9.543</h1>
+						<div class="uk-text-small">
+							<span class="uk-text-danger uk-icon" data-uk-icon="icon: triangle-down"> -23%<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 7 15 7 10 12"></polygon></svg></span> less than last week.
+						</div>
+						
+					</div>
+					<div class="uk-visible@xl">
+						<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="1.1" cx="7.7" cy="8.6" r="3.5"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M1,18.1 C1.7,14.6 4.4,12.1 7.6,12.1 C10.9,12.1 13.7,14.8 14.3,18.3"></path><path fill="none" stroke="#000" stroke-width="1.1" d="M11.4,4 C12.8,2.4 15.4,2.8 16.3,4.7 C17.2,6.6 15.7,8.9 13.6,8.9 C16.5,8.9 18.8,11.3 19.2,14.1"></path></svg></span>Lorem ipsum</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">5.284</h1>
+						<div class="uk-text-small">
+							<span class="uk-text-success uk-icon" data-uk-icon="icon: triangle-up"> 7%<svg width="20" height="20" viewBox="0 0 20 20"><polygon points="5 13 10 8 15 13"></polygon></svg></span> more than last week.
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="uk-grid uk-grid-medium uk-sortable" data-uk-grid="" uk-sortable="handle: .sortable-icon">
+					
+					<!-- panel -->
+					<div class="uk-width-1-2@l uk-first-column">
+						<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+							<div class="uk-card-header">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-auto"><h4>Sales Chart</h4></div>
+									<div class="uk-width-expand uk-text-right panel-icons">
+										<a href="#" class="uk-icon-link sortable-icon uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: move" aria-describedby="uk-tooltip-56" style="user-select: none;"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="4,5 1,5 1,9 2,9 2,6 4,6"></polygon><polygon points="1,16 2,16 2,18 4,18 4,19 1,19"></polygon><polygon points="14,16 14,19 11,19 11,18 13,18 13,16"></polygon><rect fill="none" stroke="#000" x="5.5" y="1.5" width="13" height="13"></rect><rect x="1" y="11" width="1" height="3"></rect><rect x="6" y="18" width="3" height="1"></rect></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: cog" aria-describedby="uk-tooltip-58"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="9.997" cy="10" r="3.31"></circle><path fill="none" stroke="#000" d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"></path></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: close" aria-describedby="uk-tooltip-60"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></a>
+									</div>
+								</div>
+							</div>
+							<div class="uk-card-body">
+								<div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+									<canvas id="chart2" style="display: block; width: 577px; height: 300px;" class="chartjs-render-monitor" width="577" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /panel -->
+					<!-- panel -->
+					<div class="uk-width-1-2@l">
+						<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+							<div class="uk-card-header">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-auto"><h4>Predictions Chart</h4></div>
+									<div class="uk-width-expand uk-text-right panel-icons">
+										<a href="#" class="uk-icon-link sortable-icon uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: move" aria-describedby="uk-tooltip-62" style="user-select: none;"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="4,5 1,5 1,9 2,9 2,6 4,6"></polygon><polygon points="1,16 2,16 2,18 4,18 4,19 1,19"></polygon><polygon points="14,16 14,19 11,19 11,18 13,18 13,16"></polygon><rect fill="none" stroke="#000" x="5.5" y="1.5" width="13" height="13"></rect><rect x="1" y="11" width="1" height="3"></rect><rect x="6" y="18" width="3" height="1"></rect></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: cog" aria-describedby="uk-tooltip-64"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="9.997" cy="10" r="3.31"></circle><path fill="none" stroke="#000" d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"></path></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: close" aria-describedby="uk-tooltip-66"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></a>
+									</div>
+								</div>
+							</div>
+							<div class="uk-card-body">
+								<div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+									<canvas id="chart1" style="display: block; width: 577px; height: 300px;" class="chartjs-render-monitor" width="577" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /panel -->
+					<!-- panel -->
+					<div class="uk-width-1-1 uk-width-1-3@l uk-width-1-2@xl uk-grid-margin uk-first-column">
+						<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+							<div class="uk-card-header">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-auto"><h4>Activity Chart</h4></div>
+									<div class="uk-width-expand uk-text-right panel-icons">
+										<a href="#" class="uk-icon-link sortable-icon uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: move" aria-describedby="uk-tooltip-68" style="user-select: none;"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="4,5 1,5 1,9 2,9 2,6 4,6"></polygon><polygon points="1,16 2,16 2,18 4,18 4,19 1,19"></polygon><polygon points="14,16 14,19 11,19 11,18 13,18 13,16"></polygon><rect fill="none" stroke="#000" x="5.5" y="1.5" width="13" height="13"></rect><rect x="1" y="11" width="1" height="3"></rect><rect x="6" y="18" width="3" height="1"></rect></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: cog" aria-describedby="uk-tooltip-70"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="9.997" cy="10" r="3.31"></circle><path fill="none" stroke="#000" d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"></path></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: close" aria-describedby="uk-tooltip-72"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></a>
+									</div>
+								</div>
+							</div>
+							<div class="uk-card-body">
+								<div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+									<canvas id="chart3" style="display: block; width: 577px; height: 300px;" class="chartjs-render-monitor" width="577" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /panel -->
+					<!-- panel -->
+					<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl uk-grid-margin">
+						<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+							<div class="uk-card-header">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-auto"><h4>Distribution Chart</h4></div>
+									<div class="uk-width-expand uk-text-right panel-icons">
+										<a href="#" class="uk-icon-link sortable-icon uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: move" aria-describedby="uk-tooltip-74" style="user-select: none;"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="4,5 1,5 1,9 2,9 2,6 4,6"></polygon><polygon points="1,16 2,16 2,18 4,18 4,19 1,19"></polygon><polygon points="14,16 14,19 11,19 11,18 13,18 13,16"></polygon><rect fill="none" stroke="#000" x="5.5" y="1.5" width="13" height="13"></rect><rect x="1" y="11" width="1" height="3"></rect><rect x="6" y="18" width="3" height="1"></rect></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: cog" aria-describedby="uk-tooltip-76"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="9.997" cy="10" r="3.31"></circle><path fill="none" stroke="#000" d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"></path></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: close" aria-describedby="uk-tooltip-78"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></a>
+									</div>
+								</div>
+							</div>
+							<div class="uk-card-body">
+								<div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+									<canvas id="chart4" style="display: block; width: 253px; height: 300px;" class="chartjs-render-monitor" width="253" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /panel -->
+					<!-- panel -->
+					<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl uk-grid-margin">
+						<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+							<div class="uk-card-header">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-auto"><h4>Population Chart</h4></div>
+									<div class="uk-width-expand uk-text-right panel-icons">
+										<a href="#" class="uk-icon-link sortable-icon uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: move" aria-describedby="uk-tooltip-80" style="user-select: none;"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="4,5 1,5 1,9 2,9 2,6 4,6"></polygon><polygon points="1,16 2,16 2,18 4,18 4,19 1,19"></polygon><polygon points="14,16 14,19 11,19 11,18 13,18 13,16"></polygon><rect fill="none" stroke="#000" x="5.5" y="1.5" width="13" height="13"></rect><rect x="1" y="11" width="1" height="3"></rect><rect x="6" y="18" width="3" height="1"></rect></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: cog" aria-describedby="uk-tooltip-82"><svg width="20" height="20" viewBox="0 0 20 20"><circle fill="none" stroke="#000" cx="9.997" cy="10" r="3.31"></circle><path fill="none" stroke="#000" d="M18.488,12.285 L16.205,16.237 C15.322,15.496 14.185,15.281 13.303,15.791 C12.428,16.289 12.047,17.373 12.246,18.5 L7.735,18.5 C7.938,17.374 7.553,16.299 6.684,15.791 C5.801,15.27 4.655,15.492 3.773,16.237 L1.5,12.285 C2.573,11.871 3.317,10.999 3.317,9.991 C3.305,8.98 2.573,8.121 1.5,7.716 L3.765,3.784 C4.645,4.516 5.794,4.738 6.687,4.232 C7.555,3.722 7.939,2.637 7.735,1.5 L12.263,1.5 C12.072,2.637 12.441,3.71 13.314,4.22 C14.206,4.73 15.343,4.516 16.225,3.794 L18.487,7.714 C17.404,8.117 16.661,8.988 16.67,10.009 C16.672,11.018 17.415,11.88 18.488,12.285 L18.488,12.285 Z"></path></svg></a>
+										<a href="#" class="uk-icon-link uk-icon" title="" data-uk-tooltip="" data-uk-icon="icon: close" aria-describedby="uk-tooltip-84"><svg width="20" height="20" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></a>
+									</div>
+								</div>
+							</div>
+							<div class="uk-card-body">
+								<div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+									<canvas id="chart5" style="display: block; width: 253px; height: 300px;" class="chartjs-render-monitor" width="253" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /panel --> 
+				</div>
+				<footer class="uk-section uk-section-small uk-text-center">
+					<hr>
+					<p class="uk-text-small uk-text-center">Copyright 2019 - <a href="https://github.com/zzseba78/Kick-Off">Created by KickOff</a> | Built with <a href="http://getuikit.com/" title="" target="_blank" data-uk-tooltip="" aria-describedby="uk-tooltip-86"><span data-uk-icon="uikit" class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="14.4,3.1 11.3,5.1 15,7.3 15,12.9 10,15.7 5,12.9 5,8.5 2,6.8 2,14.8 9.9,19.5 18,14.8 18,5.3"></polygon><polygon points="9.8,4.2 6.7,2.4 9.8,0.4 12.9,2.3"></polygon></svg></span></a> </p>
+				</footer>
+			</div>
+		</div>
+		<!-- /CONTENT -->
+		<!-- OFFCANVAS -->
+		<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: true" class="uk-offcanvas">
+			<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide" role="dialog" aria-modal="true">
+				<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close="" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+				<ul class="uk-nav uk-nav-default">
+					<li class="uk-active"><a href="#">Active</a></li>
+					<li class="uk-parent">
+						<a href="#">Parent</a>
+						<ul class="uk-nav-sub"> 
+							<li><a href="#">Sub item</a></li>
+							<li><a href="#">Sub item</a></li>
+						</ul>
+					</li>
+					<li class="uk-nav-header">Header</li>
+					<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"><svg width="20" height="20" viewBox="0 0 20 20"><rect x="1" y="3" width="18" height="1"></rect><rect x="1" y="7" width="18" height="1"></rect><rect x="1" y="11" width="18" height="1"></rect><rect x="1" y="15" width="18" height="1"></rect></svg></span> Item</a></li>
+					<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"><svg width="20" height="20" viewBox="0 0 20 20"><rect fill="none" stroke="#000" x="3.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="11.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="3.5" y="11.5" width="5" height="5"></rect></svg></span> Item</a></li>
+					<li class="uk-nav-divider"></li>
+					<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"><svg width="20" height="20" viewBox="0 0 20 20"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline><polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline><rect x="8" y="7" width="1" height="9"></rect><rect x="11" y="7" width="1" height="9"></rect><rect x="2" y="3" width="16" height="1"></rect></svg></span> Item</a></li>
+				</ul>
+				<h3>Title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+ex ea commodo consequat.</p>
+			</div>
+		</div>
+		<!-- /OFFCANVAS -->
+		
+		<!-- JS FILES -->
+		<script src="app_files/uikit.min.js"></script>
+		<script src="app_files/uikit-icons.min.js"></script>
+		<script src="app_files/Chart.min.js"></script>
+		<script src="app_files/chartScripts.js"></script>
+	
+
+</body></html>
